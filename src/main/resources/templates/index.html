@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+    <link th:href="@{/webjars/bootstrap/5.1.3/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+    <form name="calc" action = "post" id="calc">
+        <div>
+            <p>1つ目の数字</p>
+            <input type="number" name="num">
+        </div>
+        <div>
+            <p>2つ目の数字</p>
+            <input type="number" name="num2">
+        </div>
+        <div>
+            <label>
+            <input type="radio" name="type" value="0">足し算
+        </label>
+        </div>
+        <div>
+        <label>
+            <input type="radio" name="type" value="1">引き算
+        </label>
+        </div>
+        <div>
+        <label>
+            <input type="radio" name="type" value="2">掛け算
+        </label>
+        </div>
+        <div>
+        <label>
+            <input type="radio" name="type" value="3">割り算
+        </label>
+        </div>
+        <div>
+        <label>
+            <input type="radio" name="type" value="4">フィボナッチ数
+        </label>
+        </div>
+    </form>
+    <div>
+        <button id = "button1">計算</button>
+    </div>
+    <div>
+        <p>リザルト</p>
+        <p id="result"></p>
+    </div>
+    <script type="text/javascript" th:src="@{/jquery-3.6.4.js}"></script>
+    <script type="text/javascript" th:src="@{/send.js}"></script>
+</body>
+</html>
