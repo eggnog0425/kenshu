@@ -2,13 +2,17 @@ $(function(){
     $("#button1").click(function() {
         $.ajax({
             url: "/calc",
-            dataType: "json",
+            dataType: "text",
             data: $("form").serialize(),
-            type: "POST"
+            type: "POST",
+            timeout: 10000
         }).done(function(data) {
             $("#result").text(data);
-        }).fail(function() {
+        }).fail(function(jqXHR, textStatus, errorThrown) {
             $("#result").text("エラーが発生しました");
+            console.log(textStatus)
+            console.log(errorThrown.message)
+            console.log(jqXHR.status)
         });
     });
 });

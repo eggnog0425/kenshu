@@ -3,6 +3,7 @@ package com.example.kenshu.controller;
 import com.example.kenshu.dto.FormDto;
 import com.example.kenshu.service.CalcService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +18,8 @@ public class CalcController {
     public CalcController(CalcService calcService) {
         this.calcService = calcService;
     }
-    @PostMapping("/calc")
+
+    @PostMapping(value = "/calc", produces = "text/plain")
     public String calc(FormDto form) {
         if (Objects.isNull(form.getType())) {
             return "";
@@ -34,7 +36,7 @@ public class CalcController {
             case "4":
                 return calcService.fibonacci(form.getNum(), form.getNum2());
             default:
-                return "";
+                return "ラジオボタンから選択してください。";
         }
     }
 }

@@ -1,15 +1,16 @@
 package com.example.kenshu.dto;
 
+
 public class FormDto {
-    private int num;
-    private int num2;
+    private Integer num;
+    private Integer num2;
     private String type;
 
-    public void setNum(int num) {
+    public void setNum(Integer num) {
         this.num = num;
     }
 
-    public void setNum2(int num2) {
+    public void setNum2(Integer num2) {
         this.num2 = num2;
     }
 

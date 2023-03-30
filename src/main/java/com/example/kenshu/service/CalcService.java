@@ -26,13 +26,19 @@ public class CalcService {
     }
 
     public String fibonacci(int first, int last) {
-        if (first < 0 || last <= 0) {
-            return "なし";
+        if (first < 0) {
+            return "1つ目の数字には0以上の値を入力してください";
         }
         List<String> l = new ArrayList<>();
         if (first == 0) {
             l.add("0");
+            if (last == 0) {
+                return String.join(",", l);
+            }
             l.add("1");
+            if (last == 1) {
+                return String.join(",", l);
+            }
             zeroOrOneFibonacci(last, l);
             return String.join(", ",l);
         }
@@ -43,7 +49,7 @@ public class CalcService {
         }
         int j = 1;
         if (last < first) {
-            return "";
+            return "2つ目の数字には1つ目の数字より大きな値を入力してください。";
         }
         for (int i = 0; i < last; i++) {
             j += j;
@@ -56,7 +62,7 @@ public class CalcService {
     }
     private void zeroOrOneFibonacci(int last, List l) {
         int j = 1;
-        for (int i = 0; i < last; i++) {
+        for (int i = 0; i <= last; i++) {
             l.add(String.valueOf(j));
             j += j;
         }
