@@ -16,3 +16,12 @@ $(function(){
         });
     });
 });
+
+$(function() {
+    $(".type").click(function() {
+        $("#num2").prop("disabled", false);
+    });
+    $("#fibonacci").click(function() {
+        $("#num2").prop("disabled", true);
+    });
+});

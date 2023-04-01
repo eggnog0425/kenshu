@@ -34,7 +34,7 @@ public class CalcController {
             case "3":
                 return calcService.division(form.getNum(), form.getNum2());
             case "4":
-                return calcService.fibonacci(form.getNum(), form.getNum2());
+                return calcService.fibonacci(form.getNum());
             default:
                 return "ラジオボタンから選択してください。";
         }

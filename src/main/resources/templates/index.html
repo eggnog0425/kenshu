@@ -13,31 +13,31 @@
         </div>
         <div>
             <p>2つ目の数字</p>
-            <input type="number" name="num2">
+            <input type="number" name="num2" id="num2">
         </div>
         <div>
             <label>
-            <input type="radio" name="type" value="0">足し算
+            <input type="radio" name="type" value="0", class="type">足し算
         </label>
         </div>
         <div>
         <label>
-            <input type="radio" name="type" value="1">引き算
+            <input type="radio" name="type" value="1", class="type">引き算
         </label>
         </div>
         <div>
         <label>
-            <input type="radio" name="type" value="2">掛け算
+            <input type="radio" name="type" value="2", class="type">掛け算
         </label>
         </div>
         <div>
         <label>
-            <input type="radio" name="type" value="3">割り算
+            <input type="radio" name="type" value="3", class="type">割り算
         </label>
         </div>
         <div>
         <label>
-            <input type="radio" name="type" value="4">フィボナッチ数
+            <input type="radio" name="type" value="4" id="fibonacci", class="type">フィボナッチ数
         </label>
         </div>
     </form>
@@ -49,6 +49,6 @@
         <p id="result"></p>
     </div>
     <script type="text/javascript" th:src="@{/webjars/jquery/3.6.4/jquery.js}"></script>
-    <script type="text/javascript" th:src="@{/send.js}"></script>
+    <script type="text/javascript" th:src="@{/index.js}"></script>
 </body>
 </html>
