@@ -1,9 +1,9 @@
 package com.example.kenshu.service;
 
-import org.springframework.stereotype.Service;
-
 import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Service;
 
 @Service
 public class CalcService {
@@ -22,7 +22,7 @@ public class CalcService {
         if (num1 == 0) {
             return "N/A";
         }
-        return String.valueOf(num1 / num2);
+        return String.valueOf((double)num1 / num2);
     }
 
     public String fibonacci(int num1) {
