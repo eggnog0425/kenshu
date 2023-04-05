@@ -1,5 +1,7 @@
 package com.example.kenshu.service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,5 +61,9 @@ public class CalcService {
         } else {
             throw new ArithmeticException("数値が範囲外です");
         }
+    }
+    private int divide7(double num) {
+        BigDecimal val = BigDecimal.valueOf(num);
+        return val.divide(BigDecimal.valueOf(7),0, RoundingMode.HALF_UP).intValue();
     }
 }
