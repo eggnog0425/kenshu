@@ -69,9 +69,9 @@ public class CalcService {
     private int calcTax(int x, boolean isReduced) {
         BigDecimal tax;
         if (isReduced) {
-            tax = BigDecimal.valueOf(8);
+            tax = BigDecimal.valueOf(0.08);
         } else {
-            tax = BigDecimal.valueOf(10);
+            tax = BigDecimal.valueOf(0.1);
         }
         return BigDecimal.valueOf(x)
                 .divide(tax,0, RoundingMode.HALF_UP)
