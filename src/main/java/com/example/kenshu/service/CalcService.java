@@ -66,4 +66,15 @@ public class CalcService {
         BigDecimal val = BigDecimal.valueOf(num);
         return val.divide(BigDecimal.valueOf(7),0, RoundingMode.HALF_UP).intValue();
     }
+    private int calcTax(int x, boolean isReduced) {
+        BigDecimal tax;
+        if (isReduced) {
+            tax = BigDecimal.valueOf(8);
+        } else {
+            tax = BigDecimal.valueOf(10);
+        }
+        return BigDecimal.valueOf(x)
+                .divide(tax,0, RoundingMode.HALF_UP)
+                .intValue();
+    }
 }
